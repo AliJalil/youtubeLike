@@ -33,7 +33,7 @@
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
-        <TextView
+        <Constraint
             android:id="@+id/videoTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
+        <Constraint
             android:id="@+id/imageView"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -52,7 +52,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/videoTitle" />
 
-        <ImageView
+        <Constraint
             android:id="@+id/playImg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,7 +66,12 @@
         app:constraintSetEnd="@id/end"
         app:constraintSetStart="@+id/start" />
     <OnSwipe
-        app:dragDirection="dragUp"
+        app:dragDirection="dragDown"
         app:touchRegionId="@+id/playImg">
+    </OnSwipe>
+
+    <OnSwipe
+        app:dragDirection="dragDown"
+        app:touchRegionId="@+id/imageView">
     </OnSwipe>
 </MotionScene>
